@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+import os
 import smtplib
 import winsound
 import serial
@@ -25,25 +26,26 @@ def startScan():
 @app.route('/unlock', methods=['GET'])
 def servo():
     print('unlocked')
-    s = smtplib.SMTP("smtp.gmail.com", 587)
-    s.starttls()
-    s.login("inventorshubinc@gmail.com", "Password4u")
-    s.sendmail("inventorshubinc@gmail.com", "michaelwu21@gmail.com", "\nYour car has been unlocked")
-    s.quit()
+    '''s = smtplib.SMTP("smtp.gmail.com", 587) #This is to send an email when the car is unlocked... Good job on finding this
+    s.starttls()                               #hidden feature. Now you can try and get this working (not that hard) ;)
+    s.login("email", "password")
+    s.sendmail("email", "emailto", "\nYour car has been unlocked")
+    s.quit()'''
     winsound.Beep(1500, 3000)
 
 
 if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    addr = ('192.168.137.1', 5000)
+    addr = (socket.gethostname(), 5000)
     print("Binding")
     sock.bind(addr)
-    print('Binded')
-    sock.listen(1)
     socketman = sock.getsockname()
     print(socketman)
+    print('Binded')
+    sock.listen(1)
+    print('Running Script')
+    os.system('Py -3.6 script.py ' + socketman[0])
     conn, ip = sock.accept()
     print('connected1')
     conn2, ip2 = sock.accept()
-    #ser=serial.Serial('/dev/ttyACM0', 9600)
     app.run(host='0.0.0.0')

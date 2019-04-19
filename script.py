@@ -3,8 +3,9 @@ import winsound
 import cv2
 import numpy as np
 import time
-import serial
 import socket
+import getopt
+from sys import argv
 
 
 
@@ -28,11 +29,12 @@ def get_irises_location(frame_gray):
 def convertToRGB(image):
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-
+print(argv[1])
+Hostip = str(argv[1])
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server_address = ('192.168.137.1', 5000)
+server_address = (Hostip, 5000)
 sock.connect(server_address)
 
 print("ready")
@@ -104,7 +106,6 @@ while True:
         if elapsedeyes > 2:
             print("Asleep: " + str(sleepcounter) + ": " + str(elapsedeyes))
             if time.time() - lastTimeeyeBuzz >= 1:
-                #ser.write(str.encode("buzz\n"))
                 winsound.Beep(3500, 1000)
                 time.sleep(1)
                 lastTimeeyeBuzz = time.time()
