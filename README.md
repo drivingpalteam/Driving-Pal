@@ -10,7 +10,7 @@
 
 **Setting up Driver Assistant:**
 
-1) Download the files here: https://drive.google.com/drive/folders/1GavGRNxS3aeJlZVrj_RM_ikSoU83bDJK?usp=sharing
+1) Download the files here: https://drive.google.com/drive/folders/1lnuWNgmTD-R-IiiVln8bJ7lQSHiR8IAm?usp=sharing
 2) Make sure to extract the driverassitant zip to the Driving-Pal folder.
 3) Install NodeJS: https://nodejs.org/en/download/
 
