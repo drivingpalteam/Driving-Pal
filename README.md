@@ -8,12 +8,11 @@
 4) Drag and drop the DrivingPalVoice.zip file and confirm.
 5) You will now have a working DialogFlow Agent, but you will need to change the fulfillment later.
 
-**Setting up Driver Assistant: **
+**Setting up Driver Assistant:**
 
 1) Download the files here: https://drive.google.com/drive/folders/1GavGRNxS3aeJlZVrj_RM_ikSoU83bDJK?usp=sharing
-2) Install NodeJS: https://nodejs.org/en/download/
-3) Using terminal, navigate to ObjectDetection
-4) Run: "python3 maincameraloop.py" (Follow steps below first to install python libraries)
+2) Make sure to extract the driverassitant zip to the Driving-Pal folder.
+3) Install NodeJS: https://nodejs.org/en/download/
 
 ##  **Starting the Server and all sub-processes**
 
