@@ -1,7 +1,12 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+import subprocess
+from multiprocessing import Process
+import threading
+from subprocess import call
 import os
+import time
 import smtplib
 import winsound
 import serial
@@ -33,19 +38,54 @@ def servo():
     s.quit()'''
     winsound.Beep(1500, 3000)
 
+def runCV():
+    call(["python", "script.py"])
+
+def runBlockstack():
+    call(["python", "driverassistant\ObjectDetection\maincameraloop.py"])
+
+def serveo(socketman):
+    textBuffer = ''
+    #os.system('ssh -tt -R 80:' + str(socketman[0]) + ":5000 serveo.net")
+    p = subprocess.call(["ssh", "-R", "80:" + str(socketman[0]) + ":7000", "serveo.net"], shell=False);
+    (output, err) = p.communicate()
+
+    ## Wait for date to terminate. Get return returncode ##
+    p_status = p.wait()
+    print
+    "Command output : ", output
+    print
+    "Command exit status/return code : ", p_status
+    print('finished')
 
 if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    addr = (socket.gethostname(), 5000)
+    addr = (socket.gethostname(), 10000)
     print("Binding")
     sock.bind(addr)
     socketman = sock.getsockname()
     print(socketman)
     print('Binded')
-    sock.listen(1)
-    print('Running Script')
-    os.system('Py -3.6 script.py ' + socketman[0])
+    sock.listen(2)
+    print('Running Script for Sleep Detection')
+
+    #_thread.start_new_thread(os.system('Py -3.6 script.py ' + socketman[0]))
+    processThread = threading.Thread(target=runCV)  # <- note extra ','
+    processThread.start()
+    print("running")
+
     conn, ip = sock.accept()
     print('connected1')
+    print('Running Script for Unlock and HUD')
+    processThread1 = threading.Thread(target=runBlockstack)  # <- note extra ','
+    processThread1.start()
+    #os.system('Py -3.6 driverassistant\ObjectDetection\maincameraloop.py ' + socketman[0])
     conn2, ip2 = sock.accept()
-    app.run(host='0.0.0.0')
+
+    print("DONE!!\n\nUse this URL with serveo.net in it")
+    '''processThread2 = threading.Thread(target=serveo(socketman))  # <- note extra ','
+    processThread2.start()'''
+    p = Process(target=serveo, args=(socketman,))
+    p.start()
+    time.sleep(5)
+    app.run(host=socket.gethostname(), port=7000)

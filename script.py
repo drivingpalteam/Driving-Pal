@@ -29,12 +29,13 @@ def get_irises_location(frame_gray):
 def convertToRGB(image):
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-print(argv[1])
-Hostip = str(argv[1])
+#print(argv[1])
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-server_address = (Hostip, 5000)
+Hostip = socket.gethostname()
+print(Hostip)
+server_address = (Hostip, 10000)
 sock.connect(server_address)
 
 print("ready")
