@@ -14,6 +14,7 @@
 2) Make sure to extract the driverassitant zip to the Driving-Pal folder.
 3) Install NodeJS: https://nodejs.org/en/download/
 4) ```npm install -g browserify``` (run as admin)
+**Note: If you get a port occupied error, make sure the port is not being used. Otherwise, kill all node.js instances (```taskkill /f /im node.exe``` for windows)
 
 ##  **Starting the Server and all sub-processes**
 
