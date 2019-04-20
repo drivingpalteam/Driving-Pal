@@ -73,22 +73,23 @@ if __name__ == '__main__':
     print('Running Script for Sleep Detection')
 
     #_thread.start_new_thread(os.system('Py -3.6 script.py ' + socketman[0]))
-    processThread = threading.Thread(target=runCV)  # <- note extra ','
-    processThread.start()
+    #processThread = threading.Thread(target=runCV)  # <- note extra ','
+    #processThread.start()
     print("running")
 
     conn, ip = sock.accept()
-    print('connected1')
-    print('Running Script for Unlock and HUD')
-    processThread1 = threading.Thread(target=runBlockstack)  # <- note extra ','
-    processThread1.start()
+    #print('connected1')
+    #print('Running Script for Unlock and HUD')
+    #processThread1 = threading.Thread(target=runBlockstack)  # <- note extra ','
+    #processThread1.start()
     #os.system('Py -3.6 driverassistant\ObjectDetection\maincameraloop.py ' + socketman[0])
     conn2, ip2 = sock.accept()
 
-    print("DONE!!\n\nUse this URL with serveo.net in it")
+    #print("DONE!!\n\nUse this URL with serveo.net in it")
     '''processThread2 = threading.Thread(target=serveo(socketman))  # <- note extra ','
     processThread2.start()'''
-    p = Process(target=serveo, args=(socketman,))
-    p.start()
-    time.sleep(10)
-    app.run(host=socket.gethostname(), port=7000)
+    #p = Process(target=serveo, args=(socketman,))
+    #p.start()
+    #conn2.sendall(b'start\n')
+    print("All done")
+    app.run(port=7000)
