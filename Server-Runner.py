@@ -33,8 +33,8 @@ def servo():
     print('unlocked')
     '''s = smtplib.SMTP("smtp.gmail.com", 587) #This is to send an email when the car is unlocked... Good job on finding this
     s.starttls()                               #hidden feature. Now you can try and get this working (not that hard) ;)
-    s.login("email", "password")
-    s.sendmail("email", "emailto", "\nYour car has been unlocked")
+    s.login("from_email", "password")          #You will need to change security features on the sender email to allow less secure apps
+    s.sendmail("from_email", "to_email", "\nYour car has been unlocked")
     s.quit()'''
     winsound.Beep(1500, 3000)
 
@@ -87,5 +87,5 @@ if __name__ == '__main__':
     processThread2.start()'''
     p = Process(target=serveo, args=(socketman,))
     p.start()
-    time.sleep(5)
+    time.sleep(10)
     app.run(host=socket.gethostname(), port=7000)
