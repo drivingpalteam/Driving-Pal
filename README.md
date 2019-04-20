@@ -30,7 +30,8 @@
 
 ##  **Starting the Server and all sub-processes**
 
-This is the easier part. Make a note that you will need to use __python3.6__
+This is the easier part. Make a note that you will need to use __python3.6__.
+
 Run the following commands:
 
 ```
