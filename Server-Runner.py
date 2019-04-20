@@ -42,7 +42,10 @@ def runCV():
     call(["python", "script.py"])
 
 def runBlockstack():
-    call(["python", "driverassistant\ObjectDetection\maincameraloop.py"])
+    p = os.path.dirname(os.path.abspath(__file__))
+    subprocess.Popen(["python", "maincameraloop.py"], shell=True,
+                     stdout=subprocess.PIPE,
+                     cwd=p + "/driverassistant/ObjectDetection")
 
 def serveo(socketman):
     textBuffer = ''
