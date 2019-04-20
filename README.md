@@ -22,8 +22,8 @@
       -driverassistant
         -hello-world-tutorial
         -ObjectDetection
-        -index.html 
-        ```
+        -index.html
+    ```
 3) Install NodeJS: https://nodejs.org/en/download/
 4) ```npm install -g browserify``` (run as admin)
 **Note: If you get a port occupied error, make sure the port is not being used. Otherwise, kill all node.js instances (```taskkill /f /im node.exe``` for windows)
