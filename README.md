@@ -41,7 +41,7 @@ pip3 install https://download.pytorch.org/whl/cu90/torch-1.0.1-cp36-cp36m-win_am
 pip3 install torchvision
 pip3 install flask
 pip3 install opencv-contrib-python
-pip3 import numpy
+pip3 install numpy
 ```
 There may be more dependencies that you will need to install with pip
 
