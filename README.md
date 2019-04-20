@@ -13,6 +13,7 @@
 1) Download the zip file here: https://drive.google.com/drive/folders/1J6aHkDpwxa9eR_Ddlk1Meda7LK7juhnH?usp=sharing
 2) Make sure to extract the driverassitant zip into the Driving-Pal folder.
     It should look like this:
+   ``` 
     -Driving-Pal
       -script.py
       -Server-Runner.py
@@ -21,7 +22,7 @@
       -driverassistant
         -hello-world-tutorial
         -ObjectDetection
-        -index.html
+        -index.html```
 3) Install NodeJS: https://nodejs.org/en/download/
 4) ```npm install -g browserify``` (run as admin)
 **Note: If you get a port occupied error, make sure the port is not being used. Otherwise, kill all node.js instances (```taskkill /f /im node.exe``` for windows)
