@@ -23,6 +23,7 @@ Run the following commands:
 
 ```
 pip3 install skikit-image
+pip3 install scipy
 pip3 install https://download.pytorch.org/whl/cu90/torch-1.0.1-cp36-cp36m-win_amd64.whl
 pip3 install torchvision
 pip3 install flask
@@ -31,9 +32,9 @@ pip3 import numpy
 ```
 There may be more dependencies that you will need to install with pip
 
-To start the server, just use a terminal to run the Server-Runner.py file. **_Use Python 3.6_**
-You will now get a message in the terminal saying that everything is initialized, and you will be given a new URL.
-Go the the DialogFlow tab in your browser, and click on the Fulfillment tab in the left-hand panel, change the URL for the Webhook, and click save.
+To start the server, just double click the file named runner.bat.
+On one of the windows you will be given a new URL containing the phrase 'serveo.net'.
+Copy the entire URL, go the the DialogFlow tab in your browser, and click on the Fulfillment tab in the left-hand panel, change the URL for the Webhook, and click save. -- It should be something like <https://random.serveo.net/start> **The ```/start``` is very important**
 Now you should be able to start the modes, by calling on the google home assistant, and saying:
 **"Talk to my Test App"** followed by **"Start safe driving mode"** for sleep detection, or **"Start driving assistant"** to start the HUD.
 
