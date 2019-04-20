@@ -57,6 +57,6 @@ Have Fun!
 ### Notes
 
 1) This is still in production.
-2) This program will only work with 2 webcams. The first one is used by the _Driver Assistant_ and the second one is used by _Safe Driving Mode_
+2) This program will only work with 2 webcams. The first one is used by the _Driver Assistant_ and the second one is used by _Safe Driving Mode_ For testing purposes, you can only use one camera at a time since we have set it to use the same camera. To revert this just change ```cam = cv2.VideoCapture(0)``` to ```cam = cv2.VideoCapture(1)``` in script.py (a text editor will do and make sure to save).
 3) This has only been tested on windows 10, you might need to change some things for different operating systems.
 4) Make sure you have python3.6 installed and all the dependencies should be added to that.
