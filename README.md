@@ -40,3 +40,10 @@ Now you should be able to start the modes, by calling on the google home assista
 
 
 Have Fun!
+
+### Notes
+
+1) This is still in production.
+2) This program will only work with 2 webcams. The first one is used by the _Driver Assistant_ and the second one is used by _Safe Driving Mode_
+3) This has only been tested on windows 10, you might need to change some things for different operating systems.
+4) Make sure you have python3.6 installed and all the dependencies should be added to that.
