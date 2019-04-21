@@ -49,7 +49,7 @@ pip3 install numpy
 There may be more dependencies that you will need to install with pip
 
 To start the server, just double click the file named runner.bat.
-On one of the windows you will be given a new URL containing the phrase 'serveo.net'.
+On the window titled OpenSSH SSH client, you will be given a new URL containing the phrase 'serveo.net'.
 Copy the entire URL, go the the DialogFlow tab in your browser, and click on the Fulfillment tab in the left-hand panel, change the URL for the Webhook, and click save. -- It should be something like "https://random.serveo.net/start" **The ```/start``` is very important**
 Now you should be able to start the modes, by calling on the google home assistant, and saying:
 **"Talk to my Test App"** followed by **"Start safe driving mode"** for sleep detection, or **"Start driving assistant"** to start the HUD.
