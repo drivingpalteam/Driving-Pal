@@ -35,7 +35,7 @@ Also download this repository and extract the zip fils to a known location.
 
 This is the easier part. Make a note that you will need to use __python3.6__.
 
-Run the following commands:
+Run the following commands in command prompt as administrator (right-click command prompt and click run as administrator):
 
 ```
 pip3 install skikit-image
