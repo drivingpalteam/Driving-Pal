@@ -1,6 +1,7 @@
 # Driving-Pal
 
 Make sure to install python 3.6 and add it to path when installing. (https://www.python.org/downloads/release/python-360/)
+Also download this repository and extract the zip fils to a known location.
 
 **To start running this project, you will first need to set up Google's DialogFlow API.**
 
